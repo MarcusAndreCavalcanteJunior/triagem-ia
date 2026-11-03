@@ -4,6 +4,7 @@ import br.com.andre.triagem_ia.dominio.Triagem;
 import br.com.andre.triagem_ia.dto.NovaTriagemRequest;
 import br.com.andre.triagem_ia.dto.TriagemResponse;
 import br.com.andre.triagem_ia.service.TriagemService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class TriagemController {
     }
 
     @PostMapping
-    public ResponseEntity<TriagemResponse> criar(@RequestBody NovaTriagemRequest request) {
+    public ResponseEntity<TriagemResponse> criar(@Valid @RequestBody NovaTriagemRequest request) {
         Triagem triagem = service.registrar(request.texto());
         return ResponseEntity.status(HttpStatus.CREATED).body(TriagemResponse.de(triagem));
     }
