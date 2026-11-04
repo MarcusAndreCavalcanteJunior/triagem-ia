@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Triagem IA</title>
+</head>
+<body>
+<h1>Triagem IA</h1>
+<textarea id="texto" rows="5" cols="50" placeholder="Digite a reclamação"></textarea>
+<br>
+<button id="enviar">Classificar</button>
+<pre id="resultado"></pre>
+
+<script>
+    document.getElementById('enviar').addEventListener('click', async () => {
+        const texto = document.getElementById('texto').value;
+        const resultado = document.getElementById('resultado');
+        resultado.textContent = 'Classificando...';
+
+        try {
+            const resposta = await fetch('/triagens', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ texto: texto })
+            });
+            const dados = await resposta.json();
+            resultado.textContent = JSON.stringify(dados, null, 2);
+        } catch (erro) {
+            resultado.textContent = 'Erro: ' + erro.message;
+        }
+    });
+</script>
+</body>
+</html>
