@@ -151,4 +151,6 @@ A aplicação é empacotada com Docker e roda no Render (plano gratuito). As var
 
 ## Sobre mim
 
-Sou André, formado em Engenharia de Software pela Faculdade Anhanguera de Maceió em 2026. Venho de outra área profissional e estou construindo minha carreira como desenvolvedor. Este projeto faz parte do meu portfólio e reflete o que eu aprendi até aqui: escrever código que eu consigo explicar, testar e colocar no ar.
+## Sobre mim
+
+Meu nome é André, sou formado em Engenharia de Software pela Faculdade Anhanguera de Maceió em junho de 2026. Estou construindo minha carreira como desenvolvedor. Este projeto faz parte do meu portfólio e reflete o que eu aprendi até aqui: escrever código que eu consigo explicar, testar e colocar no ar.
